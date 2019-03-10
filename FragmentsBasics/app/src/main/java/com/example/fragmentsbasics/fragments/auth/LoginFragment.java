@@ -1,4 +1,4 @@
-package com.example.fragmentsbasics;
+package com.example.fragmentsbasics.fragments.auth;
 
 
 import android.os.Bundle;
@@ -10,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import com.example.fragmentsbasics.R;
 
 import androidx.navigation.Navigation;
 
@@ -17,11 +20,10 @@ import androidx.navigation.Navigation;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SignupFragment extends Fragment {
-    EditText nameEdt, emailEdt, passEdt;
+public class LoginFragment extends Fragment {
 
 
-    public SignupFragment() {
+    public LoginFragment() {
         // Required empty public constructor
     }
 
@@ -30,38 +32,45 @@ public class SignupFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_signup, container, false);
+        return inflater.inflate(R.layout.fragment_login, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        nameEdt = view.findViewById(R.id.nameEdt);
+        EditText emailEdt = view.findViewById(R.id.emailEdt);
+        EditText passEdt = view.findViewById(R.id.passwordEdt);
 
-        Button signupBtn = view.findViewById(R.id.signupBtn);
+        Button login = view.findViewById(R.id.loginBtn);
 
-        signupBtn.setOnClickListener(new View.OnClickListener() {
+        TextView signupText = view.findViewById(R.id.signupText);
+
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (checkSignIn()) {
-                    // go to the onboarding route
+                // TODO: do checks
+
+                if (checkLogin()) {
                     Bundle bundle = new Bundle();
                     bundle.putString("name", getName());
 
-                    Navigation.findNavController(v).navigate(R.id.action_signupFragment_to_onBoardingFragment, bundle);
+                    Navigation.findNavController(v).navigate(R.id.action_loginFragment_to_onBoardingFragment, bundle);
                 }
+
             }
         });
+
+        signupText.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_signupFragment, null));
     }
 
-    private boolean checkSignIn() {
+    private boolean checkLogin() {
         // TODO: check the login
 
         return true;
     }
 
     private String getName() {
-        return nameEdt.getText().toString();
+        return "Swami";
     }
 }

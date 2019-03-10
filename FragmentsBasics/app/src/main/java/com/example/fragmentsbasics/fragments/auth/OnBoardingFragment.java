@@ -1,4 +1,4 @@
-package com.example.fragmentsbasics;
+package com.example.fragmentsbasics.fragments.auth;
 
 
 import android.content.Intent;
@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.fragmentsbasics.R;
+import com.example.fragmentsbasics.activities.MainActivity;
 
 
 /**

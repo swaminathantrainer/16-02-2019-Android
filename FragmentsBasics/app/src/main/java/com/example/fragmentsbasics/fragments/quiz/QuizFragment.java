@@ -1,4 +1,4 @@
-package com.example.fragmentsbasics;
+package com.example.fragmentsbasics.fragments.quiz;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,15 +9,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.fragmentsbasics.R;
+import com.example.fragmentsbasics.model.Quiz;
+
 public class QuizFragment extends Fragment {
     private TextView titleTxt;
 
-    public static QuizFragment getInstance(String title) {
+    public static QuizFragment getInstance(Quiz quiz) {
         QuizFragment quizFragment = new QuizFragment();
 
         Bundle bundle = new Bundle();
 
-        bundle.putString("title", title);
+        bundle.putParcelable("quiz", quiz);
 
         quizFragment.setArguments(bundle);
 
@@ -34,11 +37,11 @@ public class QuizFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        String title = getArguments().getString("title");
+        Quiz quiz = getArguments().getParcelable("quiz");
 
         titleTxt = view.findViewById(R.id.titleTxt);
 
-        setTitle(title);
+        setTitle(quiz.getQuestionText());
     }
 
     public void setTitle(String title) {
