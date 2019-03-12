@@ -8,6 +8,16 @@
     tools:context=".activities.MainActivity">
 
     <TextView
+        android:id="@+id/highScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="8dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textSize="32sp"
+        tools:text="HIGH SCORE: 0" />
+
+    <TextView
         android:id="@+id/pageNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,6 +25,15 @@
         android:layout_margin="8dp"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         tools:text="15/20" />
+
+    <TextView
+        android:id="@+id/scoreTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_margin="8dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        tools:text="0" />
 
     <FrameLayout
         android:id="@+id/quizContainer"

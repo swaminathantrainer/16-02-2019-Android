@@ -10,4 +10,10 @@
         android:text="DUMMY QUIZ PAGE 1"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/optionsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleTxt" />
+
 </RelativeLayout>

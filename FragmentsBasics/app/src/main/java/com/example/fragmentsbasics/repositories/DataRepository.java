@@ -28,8 +28,15 @@ public class DataRepository {
 
     private final int[] DUMMY_ANSWERS = new int[]{0, 2, 3, 0, 3, 0};
 
-    public Quiz[] getListOfQuizzes() {
-        return generateDummyQuizData();
+    private MutableLiveData<Quiz[]> quizzesMutableLiveData;
+
+    public DataRepository() {
+        quizzesMutableLiveData = new MutableLiveData<>();
+    }
+
+    public MutableLiveData<Quiz[]> getListOfQuizzes() {
+        quizzesMutableLiveData.postValue(generateDummyQuizData());
+        return quizzesMutableLiveData;
     }
 
     private Quiz[] generateDummyQuizData() {
