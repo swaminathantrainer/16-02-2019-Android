@@ -3,6 +3,7 @@ package com.example.fragmentsbasics.repositories;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 
+import com.example.fragmentsbasics.api.APIs;
 import com.example.fragmentsbasics.model.Quiz;
 
 public class DataRepository {
@@ -30,11 +31,16 @@ public class DataRepository {
 
     private MutableLiveData<Quiz[]> quizzesMutableLiveData;
 
+    private APIs apIs;
+
     public DataRepository() {
         quizzesMutableLiveData = new MutableLiveData<>();
+        apIs = new APIs();
     }
 
     public MutableLiveData<Quiz[]> getListOfQuizzes() {
+        apIs.getAllQuizzes();
+
         quizzesMutableLiveData.postValue(generateDummyQuizData());
         return quizzesMutableLiveData;
     }

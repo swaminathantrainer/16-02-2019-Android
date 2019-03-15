@@ -1,0 +1,100 @@
+{
+    "quiz": {
+        "5db4f8ba-4627-11e9-b210-d663bd873d93": {
+            "question": "Who invented the telephone?",
+            "options": {
+                "0": "Bell",
+                "1": "Edison",
+                "2": "Einstein",
+                "3": "C.V. Raman"
+            },
+            "correctAnswer": 0
+        },
+        "5db4fba8-4627-11e9-b210-d663bd873d93": {
+            "question": "Name the world's largest ocean?",
+            "options": {
+                "0": "Indian Ocean",
+                "1": "Atlantic Ocean",
+                "2": "Arabian Sea",
+                "3": "Pacific Ocean"
+            },
+            "correctAnswer": 3
+        },
+        "5db4fd24-4627-11e9-b210-d663bd873d93": {
+            "question": "What is the diameter of Earth?",
+            "options": {
+                "0": "4000 miles",
+                "1": "8000 km",
+                "2": "8000 miles",
+                "3": "None of these"
+            },
+            "correctAnswer": 2
+        },
+        "5db4fe82-4627-11e9-b210-d663bd873d93": {
+            "question": "What is the capital city of Spain?",
+            "options": {
+                "0": "Madrid",
+                "1": "Prague",
+                "2": "Barcelona",
+                "3": "Valencia"
+            },
+            "correctAnswer": 0
+        },
+        "5db4ffd6-4627-11e9-b210-d663bd873d93": {
+            "question": "Name the seventh planet from the sun.",
+            "options": {
+                "0": "Neptune",
+                "1": "Mercury",
+                "2": "Venus",
+                "3": "Uranus"
+            },
+            "correctAnswer": 3
+        },
+        "5db5012a-4627-11e9-b210-d663bd873d93": {
+            "question": "Name the world's biggest island.",
+            "options": {
+                "0": "Nile",
+                "1": "Greenland",
+                "2": "Andanman and Nicobar Islands",
+                "3": "Iceland"
+            },
+            "correctAnswer": 1
+        },
+        "5db50602-4627-11e9-b210-d663bd873d93": {
+            "question": "What is the world's longest river?",
+            "options": {
+                "0": "Congo River",
+                "1": "Yangtze",
+                "2": "Amazon",
+                "3": "None of these"
+            },
+            "correctAnswer": 2
+        },
+        "5db507b0-4627-11e9-b210-d663bd873d93": {
+            "question": "Which chess piece can only move diagonally?",
+            "options": {
+                "0": "King",
+                "1": "Queen",
+                "2": "Rook",
+                "3": "Bishop"
+            },
+            "correctAnswer": 3
+        },
+        "5db5090e-4627-11e9-b210-d663bd873d93": {
+            "question": "Name the three primary colours.",
+            "options": {
+                "0": "Red, Yellow and Blue",
+                "1": "Black, White and Grey",
+                "2": "Red, Yellow and Green",
+                "3": "Red, Yellow and Black"
+            },
+            "correctAnswer": 0
+        }
+    },
+    "highScores": {
+        "7299630888": {
+            "score": 40,
+            "date": "2019-03-14"
+        }
+    }
+}
