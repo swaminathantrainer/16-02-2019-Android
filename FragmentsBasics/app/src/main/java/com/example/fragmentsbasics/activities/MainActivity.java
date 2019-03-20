@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.fragmentsbasics.fragments.quiz.QuizFragment;
 import com.example.fragmentsbasics.R;
+import com.example.fragmentsbasics.model.HighScore;
 import com.example.fragmentsbasics.model.Quiz;
 import com.example.fragmentsbasics.repositories.DataRepository;
 import com.example.fragmentsbasics.viewmodels.QuizViewModel;
@@ -81,6 +82,14 @@ public class MainActivity extends AppCompatActivity {
                 updateQuizUI();
             }
         });
+
+//        dataRepository.getHighScore(getNumber()).observe(this, new Observer<HighScore>() {
+//            @Override
+//            public void onChanged(@Nullable HighScore highScore) {
+//                if (highScore != null)
+//                    highScoreTxt.setText("HIGH SCORE: " + highScore.getScore());
+//            }
+//        });
     }
 
     private void nextQuiz() {
@@ -179,12 +188,24 @@ public class MainActivity extends AppCompatActivity {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putInt("HIGH_SCORE", score);
             editor.apply();
+
+            dataRepository.updateHighScore(getNumber(), score).observe(this, new Observer<HighScore>() {
+                @Override
+                public void onChanged(@Nullable HighScore highScore) {
+                    if (highScore != null)
+                        highScoreTxt.setText("HIGH SCORE: " + highScore.getScore());
+                }
+            });
         }
     }
 
     private int getHighScore() {
         int score = sharedPreferences.getInt("HIGH_SCORE", 0);
         return score;
+    }
+
+    private String getNumber() {
+        return sharedPreferences.getString("mobileNumber", "");
     }
 
 }

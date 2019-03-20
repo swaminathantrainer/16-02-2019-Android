@@ -7,6 +7,7 @@ import android.arch.lifecycle.Transformations;
 import android.arch.lifecycle.ViewModel;
 import android.support.annotation.Nullable;
 
+import com.example.fragmentsbasics.model.HighScore;
 import com.example.fragmentsbasics.model.Quiz;
 import com.example.fragmentsbasics.repositories.DataRepository;
 

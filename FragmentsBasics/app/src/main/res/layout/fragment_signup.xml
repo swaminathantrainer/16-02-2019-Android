@@ -47,6 +47,15 @@
         android:inputType="textPassword"
         android:padding="8dp" />
 
+    <EditText
+        android:id="@+id/mobileNumberEdt"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_margin="8dp"
+        android:hint="Your mobile number here"
+        android:inputType="phone"
+        android:padding="8dp" />
+
     <TextView
         android:id="@+id/errorText"
         android:layout_width="match_parent"

@@ -1,6 +1,8 @@
 package com.example.fragmentsbasics.fragments.auth;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -20,7 +22,8 @@ import androidx.navigation.Navigation;
  * A simple {@link Fragment} subclass.
  */
 public class SignupFragment extends Fragment {
-    EditText nameEdt, emailEdt, passEdt;
+    EditText nameEdt, emailEdt, passEdt, mobileNumberEdt;
+    private SharedPreferences sharedPreferences;
 
 
     public SignupFragment() {
@@ -39,7 +42,10 @@ public class SignupFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        sharedPreferences = getActivity().getSharedPreferences("com.example.fragmentsbasics.prefs", Context.MODE_PRIVATE);
+
         nameEdt = view.findViewById(R.id.nameEdt);
+        mobileNumberEdt = view.findViewById(R.id.mobileNumberEdt);
 
         Button signupBtn = view.findViewById(R.id.signupBtn);
 
@@ -50,6 +56,9 @@ public class SignupFragment extends Fragment {
                     // go to the onboarding route
                     Bundle bundle = new Bundle();
                     bundle.putString("name", getName());
+                    bundle.putString("number", getNumber());
+
+                    saveNumber(getNumber());
 
                     Navigation.findNavController(v).navigate(R.id.action_signupFragment_to_onBoardingFragment, bundle);
                 }
@@ -60,10 +69,20 @@ public class SignupFragment extends Fragment {
     private boolean checkSignIn() {
         // TODO: check the login
 
-        return true;
+        return !getNumber().isEmpty();
     }
 
     private String getName() {
         return nameEdt.getText().toString();
+    }
+
+    private String getNumber() {
+        return mobileNumberEdt.getText().toString();
+    }
+
+    private void saveNumber(String number) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("mobileNumber", number);
+        editor.apply();
     }
 }

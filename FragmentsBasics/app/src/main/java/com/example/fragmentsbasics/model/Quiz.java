@@ -4,12 +4,12 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Quiz implements Parcelable {
-    private int id;
+    private String id;
     private String questionText;
     private String[] options;
     private String correctAnswer;
 
-    public Quiz(int id, String questionText, String[] options, String correctAnswer) {
+    public Quiz(String id, String questionText, String[] options, String correctAnswer) {
         this.id = id;
         this.questionText = questionText;
         this.options = options;
@@ -17,7 +17,7 @@ public class Quiz implements Parcelable {
     }
 
     protected Quiz(Parcel in) {
-        id = in.readInt();
+        id = in.readString();
         questionText = in.readString();
         options = in.createStringArray();
         correctAnswer = in.readString();
@@ -25,7 +25,7 @@ public class Quiz implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(id);
+        dest.writeString(id);
         dest.writeString(questionText);
         dest.writeStringArray(options);
         dest.writeString(correctAnswer);
@@ -48,11 +48,11 @@ public class Quiz implements Parcelable {
         }
     };
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

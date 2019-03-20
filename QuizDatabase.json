@@ -89,6 +89,16 @@
                 "3": "Red, Yellow and Black"
             },
             "correctAnswer": 0
+        },
+        "5db5090e-4627-11e9-b210-d663bd873d91": {
+            "question": "What is the color of Rainbow?",
+            "options": {
+                "0": "VIGBYOR",
+                "1": "VIGBYOR",
+                "2": "VIBGYOR",
+                "3": "VIBGOYR"
+            },
+            "correctAnswer": 2
         }
     },
     "highScores": {
